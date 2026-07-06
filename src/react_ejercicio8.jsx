@@ -1,14 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function ReactEjercicio8() {
-  const contarCaracteresYPalabras = () => {
-    const texto = document.getElementById("texto").value;
-    const caracteres = texto.length;
-    const palabras = texto.trim() === "" ? 0 : texto.trim().split(/\s+/).length;
+  const [texto, setTexto] = useState("");
+  const [caracteres, setCaracteres] = useState(0);
+  const [palabras, setPalabras] = useState(0);
 
-    document.getElementById("caracteres").textContent =
-      `Caracteres: ${caracteres}`;
-    document.getElementById("palabras").textContent = `Palabras: ${palabras}`;
+  const contarCaracteresYPalabras = (e) => {
+    const texto = e.target.value;
+
+    setTexto(texto);
+    setCaracteres(texto.length);
+    setPalabras(texto.trim() === "" ? 0 : texto.trim().split(/\s+/).length);
   };
 
   return (
