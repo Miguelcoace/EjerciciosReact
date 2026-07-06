@@ -37,15 +37,6 @@ function ReactEjercicio6() {
     actualizarTemporizador();
   };
 
-  document
-    .getElementById("iniciar")
-    ?.addEventListener("click", iniciarTemporizador);
-  document
-    .getElementById("pausar")
-    ?.addEventListener("click", pausarTemporizador);
-  document
-    .getElementById("reiniciar")
-    ?.addEventListener("click", reiniciarTemporizador);
   return (
     <>
       <h1>Ejercicio 6</h1>
@@ -54,9 +45,9 @@ function ReactEjercicio6() {
       <hr />
 
       <p id="temporizador">00:00:00</p>
-      <button id="iniciar">Iniciar</button>
-      <button id="pausar">Pausar</button>
-      <button id="reiniciar">Reiniciar</button>
+      <button onClick={iniciarTemporizador}>Iniciar</button>
+      <button onClick={pausarTemporizador}>Pausar</button>
+      <button onClick={reiniciarTemporizador}>Reiniciar</button>
     </>
   );
 }
