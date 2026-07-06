@@ -11,10 +11,6 @@ function ReactEjercicio8() {
     document.getElementById("palabras").textContent = `Palabras: ${palabras}`;
   };
 
-  document
-    .getElementById("texto")
-    ?.addEventListener("input", contarCaracteresYPalabras);
-
   return (
     <>
       <h1>Ejercicio 8</h1>
@@ -22,10 +18,15 @@ function ReactEjercicio8() {
       <Link to="/">Volver al menú</Link>
       <hr />
 
-      <input type="text" placeholder="Escribe un texto..." id="texto" />
+      <input
+        type="text"
+        placeholder="Escribe un texto..."
+        value={texto}
+        onChange={(e) => setTexto(e.target.value)}
+      />
       <br />
-      <p id="caracteres">Caracteres: 0</p>
-      <p id="palabras">Palabras: 0</p>
+      <p>Caracteres: {caracteres}</p>
+      <p>Palabras: {palabras}</p>
     </>
   );
 }
