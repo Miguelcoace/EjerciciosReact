@@ -7,11 +7,13 @@ function ReactEjercicio8() {
   const [palabras, setPalabras] = useState(0);
 
   const contarCaracteresYPalabras = (e) => {
-    const texto = e.target.value;
+    const nuevoTexto = e.target.value;
 
-    setTexto(texto);
-    setCaracteres(texto.length);
-    setPalabras(texto.trim() === "" ? 0 : texto.trim().split(/\s+/).length);
+    setTexto(nuevoTexto);
+    setCaracteres(nuevoTexto.length);
+    setPalabras(
+      nuevoTexto.trim() === "" ? 0 : nuevoTexto.trim().split(/\s+/).length,
+    );
   };
 
   return (
@@ -25,9 +27,9 @@ function ReactEjercicio8() {
         type="text"
         placeholder="Escribe un texto..."
         value={texto}
-        onChange={(e) => setTexto(e.target.value)}
+        onChange={contarCaracteresYPalabras}
       />
-      <br />
+
       <p>Caracteres: {caracteres}</p>
       <p>Palabras: {palabras}</p>
     </>
