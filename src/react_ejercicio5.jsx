@@ -29,13 +29,6 @@ function ReactEjercicio5() {
     }
   };
 
-  document.getElementById("sumar")?.addEventListener("click", sumar);
-  document.getElementById("restar")?.addEventListener("click", restar);
-  document
-    .getElementById("multiplicar")
-    ?.addEventListener("click", multiplicar);
-  document.getElementById("dividir")?.addEventListener("click", dividir);
-
   return (
     <>
       <h1>Ejercicio 5</h1>
@@ -47,10 +40,10 @@ function ReactEjercicio5() {
       <input type="number" placeholder="Segundo numero" id="num2" />
       <br />
       <br />
-      <button id="sumar">Sumar</button>
-      <button id="restar">Restar</button>
-      <button id="multiplicar">Multiplicar</button>
-      <button id="dividir">Dividir</button>
+      <button onClick={sumar}>Sumar</button>
+      <button onClick={restar}>Restar</button>
+      <button onClick={multiplicar}>Multiplicar</button>
+      <button onClick={dividir}>Dividir</button>
     </>
   );
 }
